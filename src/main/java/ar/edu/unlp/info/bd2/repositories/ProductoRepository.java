@@ -2,14 +2,14 @@ package ar.edu.unlp.info.bd2.repositories;
 
 import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.transaction.annotation.Transactional;
 
-import model.Pedido;
-import model.Producto;
+import ar.edu.unlp.info.bd2.modelo.Pedido;
+import ar.edu.unlp.info.bd2.modelo.Producto;
+
 
 @Transactional
 public interface ProductoRepository extends CrudRepository<Producto, Long>{
