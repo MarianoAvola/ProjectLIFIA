@@ -3,11 +3,23 @@ package ar.edu.unlp.info.bd2.modelo;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "PROVEEDORES")
 public class Proveedor {
 
+	@Column(name = "CUIT")
 	private Long cuit;
+	
+	@Column(name = "NOMBRE")
 	private String nombre;
+	
+	@Column(name = "DIRECCION")
 	private Direccion direccion;
+	
 	private Set<Producto> productos;
 
 	public Proveedor(String nomb, Long nroCuit, Direccion dir) {

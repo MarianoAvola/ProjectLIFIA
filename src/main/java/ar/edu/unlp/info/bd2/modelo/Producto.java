@@ -3,12 +3,30 @@ package ar.edu.unlp.info.bd2.modelo;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "PRODUCTOS")
 public class Producto {
+	
+	@Id
 	private Long id;
+	
+	@Column(name = "NOMBRE_PRODUCTO")
 	private String nombre;
+	
+	@Column(name = "PESO")
 	private double peso;
+	
+	@Column(name = "PRECIO")
 	private double precio;
+	
+	@Column(name = "PROVEEDOR")
 	private Proveedor proveedor;
+	
 	private List<PrecioHistorico> preciosHistoricos;
 
 	public Producto(String nomb, double pe, double prec) {

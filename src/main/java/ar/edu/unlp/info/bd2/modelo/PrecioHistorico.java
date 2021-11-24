@@ -2,11 +2,23 @@ package ar.edu.unlp.info.bd2.modelo;
 
 import java.time.LocalDate;
 
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Table(name = "PRECIO_HISTORICO")
 public class PrecioHistorico {
 
+	@Id
 	private Long id;
+	
+	@Column(name = "PRECIO_ACTUAL")
 	private double precio;
+	
+	@Column(name = "PRECIO_INICIO")
 	private LocalDate inicioPH;
+	
+	@Column(name = "PRECIO_FIN")
 	private LocalDate finPH;
 
 	public PrecioHistorico(double precio) {

@@ -2,15 +2,34 @@ package ar.edu.unlp.info.bd2.modelo;
 
 import java.time.LocalDate;
 import java.util.*;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import ar.edu.unlp.info.bd2.modelo.estados.*;
 
+@Entity
+@Table(name = "CLIENTES")
 public class Cliente {
 
+	@Id
 	private Long id;
+	
+	@Column(name = "NAME")
 	private String nombre;
+	
+	@Column(name = "EMAIL")
 	private String email;
+	
+	@Column(name = "FECHA_NACIMIENTO")
 	private LocalDate fechaNac;
+	
+	@Column(name = "USERNAME")
 	private String usuario;
+	
+	@Column(name = "PASSWORD")
 	private String contrasena;
 
 	private Set<Pedido> pedidos;

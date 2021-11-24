@@ -1,16 +1,36 @@
 package ar.edu.unlp.info.bd2.modelo;
 
 import java.util.*;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import ar.edu.unlp.info.bd2.modelo.estados.*;
 
+@Entity
+@Table(name = "PEDIDOS")
 public class Pedido {
 
+	@Id
 	private Long id;
+	
+	@Column(name = "ESTADO")
 	private EstadoPedido estado;
+	
+	@Column(name = "PESO")
 	private double pesoTotal;
+	
+	@Column(name = "PRECIO")
 	private double precioTotal;
+	
+	@Column(name = "CLIENTE")
 	private Cliente cliente;
+	
+	@Column(name = "REPARTIDOR")
 	private Repartidor repartidor;
+	
 	private List<DetallePedido> detalles;
 
 	public Pedido(List<DetallePedido> detas) {

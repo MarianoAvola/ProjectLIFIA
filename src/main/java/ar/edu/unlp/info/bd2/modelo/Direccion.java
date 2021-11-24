@@ -1,11 +1,25 @@
 package ar.edu.unlp.info.bd2.modelo;
 
-public class Direccion {
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Table(name = "DIRECCIONES")
+public class Direccion {
+	
+	@Id
 	private Long id;
+	
+	@Column(name = "COORDENADA_X")
 	private double coordX;
+	
+	@Column(name = "COORDENADA_Y")
 	private double coordY;
+	
+	@Column(name = "CALLE")
 	private String calle;
+	
+	@Column(name = "ALTURA")
 	private int altura;
 
 	public Direccion(double x, double y, String nombCalle, int nroCasa) {
