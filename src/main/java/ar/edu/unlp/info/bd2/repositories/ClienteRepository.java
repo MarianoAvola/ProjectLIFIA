@@ -24,9 +24,7 @@ public interface ClienteRepository extends CrudRepository<Cliente, Long>{
 	/*
 	 *  Obtiene todas las órdenes realizadas por el usuario con username 'username'
 	 */
-	@Query("select * "
-			+ "from clientes cli, pedidos ped "
-			+ "where cli.id = ped.id_cliente")
+	@Query("select * from clientes cli, pedidos ped where cli.id = ped.id_cliente")
 	public List<Pedido> getAllOrdersMadeByUser (String username);
 
 	
