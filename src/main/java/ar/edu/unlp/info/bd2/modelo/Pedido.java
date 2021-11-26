@@ -5,6 +5,8 @@ import java.util.*;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,6 +26,9 @@ public class Pedido {
 
 	@Column(name = "ESTADO")
 	private EstadoPedido estado;
+	
+	@Enumerated(EnumType.STRING)
+	private EstadoPedido2 estado2;
 
 	@Column(name = "PESO")
 	private double pesoTotal;

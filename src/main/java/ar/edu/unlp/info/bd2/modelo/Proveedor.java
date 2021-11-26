@@ -1,10 +1,12 @@
 package ar.edu.unlp.info.bd2.modelo;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -17,16 +19,17 @@ public class Proveedor {
 	@Column(name = "NOMBRE")
 	private String nombre;
 	
-	@Column(name = "DIRECCION")
+	@OneToOne(orphanRemoval=true)
+	@JoinColumn(name="DIR_FK")
 	private Direccion direccion;
 	
-	private Set<Producto> productos;
+	private List<Producto> productos;
 
 	public Proveedor(String nomb, Long nroCuit, Direccion dir) {
 		nombre = nomb;
 		cuit = nroCuit;
 		direccion = dir;
-		productos = new HashSet<>();
+		productos = new ArrayList<Producto>();
 	}
 
 	public Proveedor() {
@@ -75,11 +78,11 @@ public class Proveedor {
 		this.direccion = direccion;
 	}
 
-	public Set<Producto> getProductos() {
+	public List<Producto> getProductos() {
 		return productos;
 	}
 
-	public void setProductos(Set<Producto> productos) {
+	public void setProductos(List<Producto> productos) {
 		this.productos = productos;
 	}
 }

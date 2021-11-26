@@ -5,7 +5,11 @@ import java.util.*;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import ar.edu.unlp.info.bd2.modelo.estados.*;
@@ -15,6 +19,7 @@ import ar.edu.unlp.info.bd2.modelo.estados.*;
 public class Cliente {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
 	@Column(name = "NAME")
@@ -31,8 +36,12 @@ public class Cliente {
 	
 	@Column(name = "PASSWORD")
 	private String contrasena;
-
-	private Set<Pedido> pedidos;
+	
+	@OneToOne(orphanRemoval=true)
+	@JoinColumn(name="DIR_FK")
+	private Direccion direccion;
+	
+	private List<Pedido> pedidos;
 
 	public Cliente(String nomb, String correo, LocalDate fecNac, String user, String pass) {
 		nombre = nomb;
@@ -40,7 +49,7 @@ public class Cliente {
 		fechaNac = fecNac;
 		usuario = user;
 		contrasena = pass;
-		pedidos = new HashSet<>();
+		pedidos = new ArrayList<Pedido>();
 		if (user == null) {
 			usuario = nombre;
 		}
@@ -115,11 +124,4 @@ public class Cliente {
 		this.contrasena = contrasena;
 	}
 
-	public Set<Pedido> getPedidos() {
-		return pedidos;
-	}
-
-	public void setPedidos(Set<Pedido> pedidos) {
-		this.pedidos = pedidos;
-	}
 }

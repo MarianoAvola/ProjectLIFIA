@@ -2,6 +2,7 @@ package ar.edu.unlp.info.bd2.modelo;
 
 import java.time.LocalDateTime;
 
+
 public class DetallePedido {
 
 	private Producto producto;

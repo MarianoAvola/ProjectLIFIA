@@ -5,6 +5,8 @@ import java.util.*;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -15,6 +17,7 @@ import ar.edu.unlp.info.bd2.modelo.estados.*;
 public class Repartidor {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
 	@Column(name = "USERNAME")
@@ -32,10 +35,10 @@ public class Repartidor {
 	@Column(name = "FECHA_NACIMIENTO")
 	private LocalDate fechaNac;
 
-	private Set<Pedido> pedidos;
+	private List<Pedido> pedidos;
 
 	public Repartidor(String nomb, String correo, LocalDate fecNac, String user, String pass) {
-		this.pedidos = new HashSet<>();
+		this.pedidos = new ArrayList<Pedido>();
 		nombre = nomb;
 		email = correo;
 		fechaNac = fecNac;
@@ -113,11 +116,11 @@ public class Repartidor {
 		this.fechaNac = fechaNac;
 	}
 
-	public Set<Pedido> getPedidos() {
+	public List<Pedido> getPedidos() {
 		return pedidos;
 	}
 
-	public void setPedidos(Set<Pedido> pedidos) {
+	public void setPedidos(List<Pedido> pedidos) {
 		this.pedidos = pedidos;
 	}
 }
