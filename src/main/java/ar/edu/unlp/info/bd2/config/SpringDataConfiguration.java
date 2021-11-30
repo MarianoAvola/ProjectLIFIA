@@ -27,7 +27,7 @@ public class SpringDataConfiguration {
 
     @Bean
     public DBliveryService springDataJpaService() {
-        return  new SpringDataDBliveryService();
+        return  (DBliveryService) new SpringDataDBliveryService();
     }
 
     @Bean

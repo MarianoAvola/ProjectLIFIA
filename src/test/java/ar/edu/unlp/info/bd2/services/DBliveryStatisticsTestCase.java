@@ -1,7 +1,8 @@
 package ar.edu.unlp.info.bd2.services;
 
 import ar.edu.unlp.info.bd2.config.*;
-import ar.edu.unlp.info.bd2.model.*;
+import ar.edu.unlp.info.bd2.modelo.Pedido;
+import ar.edu.unlp.info.bd2.modelo.Producto;
 import ar.edu.unlp.info.bd2.utils.DBInitializer;
 import org.junit.Assert;
 import org.junit.jupiter.api.BeforeAll;
@@ -51,8 +52,8 @@ public class DBliveryStatisticsTestCase {
 
     @Test
     public void testGetMaxWeigth() {
-        Product product = this.service.getMaxWeigth();
-        assertEquals("Milanesa con rúcula",product.getName());
+        Producto product = this.service.getMaxWeigth();
+        assertEquals("Milanesa con rúcula",product.getNombre());
     }
 
     @Test
@@ -62,39 +63,39 @@ public class DBliveryStatisticsTestCase {
 
     @Test
     public void testGetPendingOrders() {
-        List<Order> orders = this.service.getPendingOrders();
+        List<Pedido> orders = this.service.getPendingOrders();
         assertEquals(54,orders.size());
     }
 
     @Test
     public void testGetSentOrders() {
-        List<Order> orders = this.service.getSentOrders();
+        List<Pedido> orders = this.service.getSentOrders();
         assertEquals(65,orders.size());
     }
 
     @Test
     public void testGetDeliveredOrdersInPeriod() throws ParseException {
-        List<Order> orders = this.service.getDeliveredOrdersInPeriod(sdf.parse("1/1/2013"),sdf.parse("31/12/2013"));
+        List<Pedido> orders = this.service.getDeliveredOrdersInPeriod(sdf.parse("1/1/2013"),sdf.parse("31/12/2013"));
         assertEquals(18,orders.size());
     }
 
     @Test
     public void testGetDeliveredOrdersForUser() {
-        List<Order> orders = this.service.getDeliveredOrdersForUser("luzmartnez660");
+        List<Pedido> orders = this.service.getDeliveredOrdersForUser("luzmartnez660");
         assertEquals(3,orders.size());
     }
 
     @Test
     public void testGetProductsOnePrice() {
-        List<Product> products = this.service.getProductsOnePrice();
+        List<Producto> products = this.service.getProductsOnePrice();
         assertEquals(27, products.size());
     }
 
     @Test
     public void testGetSoldProductsOn() throws ParseException {
-        List<Product> products = this.service.getSoldProductsOn(sdf.parse("28/2/2010"));
+        List<Producto> products = this.service.getSoldProductsOn(sdf.parse("28/2/2010"));
         assertEquals(4, products.size());
-        this.assertListEquality(products.stream().map(property -> property.getName()).collect(Collectors.toList()),Arrays.asList("Filet de merluza a la romana","Bife de chorizo grillado","Milanesa americana","Ensalada de hojas verdes y queso"));
+        this.assertListEquality(products.stream().map(property -> property.getNombre()).collect(Collectors.toList()),Arrays.asList("Filet de merluza a la romana","Bife de chorizo grillado","Milanesa americana","Ensalada de hojas verdes y queso"));
     }
 
     private <T> void assertListEquality(List<T> list1, List<T> list2) {

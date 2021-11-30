@@ -108,14 +108,14 @@ public interface DBliveryService {
 	/**
 	 * Crea y retorna un nuevo pedido
 	 * 
-	 * @param dateOfOrder timestamp de la fecha en que fue realizado el pedido
+	 * @param orderDate timestamp de la fecha en que fue realizado el pedido
 	 * @param address     dirección en la cual se debe entregar el pedido
 	 * @param coordX      coordenada X de la dirección
 	 * @param coordY      coordenada Y de la dirección
 	 * @param client      cliente que realizó el pedido
 	 * @return el nuevo pedido
 	 */
-	Pedido createOrder(LocalDate dateOfOrder, String address, Float coordX, Float coordY, Cliente client);
+	Pedido createOrder(Date orderDate, String address, Float coordX, Float coordY, Cliente client);
 
 	/**
 	 * Crea y retorna un nuevo pedido
@@ -229,5 +229,8 @@ public interface DBliveryService {
 	 * @return Lista de productos
 	 */
 	List<Producto> getProductsByName(String name);
+
+	
+
 
 }

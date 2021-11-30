@@ -30,6 +30,8 @@ public abstract class EstadoPedido {
 
 	public void setId(Long id) {
 		this.id = id;
-	};
+	}
+
+
 
 }

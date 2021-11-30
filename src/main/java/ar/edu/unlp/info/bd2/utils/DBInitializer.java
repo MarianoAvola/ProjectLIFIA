@@ -708,148 +708,179 @@ public class DBInitializer {
         service.addProduct(order035.getId(),1L, product107);
         service.deliverOrder2(order035.getId(), user191);
         
-        Pedido order036 = service.createOrder2(sdf.parse("20/6/2013"), "Calle 66 Nº542", -34.916235F, -57.973353F, user111);
+        Pedido order036 = service.createOrder2(-34.916235F, -57.973353F, user111);
         service.addProduct(order036.getId(),1L, product066);
         service.addProduct(order036.getId(),1L, product029);
-        Pedido order037 = service.createOrder2(sdf.parse("5/4/2013"), "Calle 52 Nº710", -34.943908F, -57.970205F, user037);
+        
+        Pedido order037 = service.createOrder2(-34.943908F, -57.970205F, user037);
         service.addProduct(order037.getId(),1L, product010);
         service.addProduct(order037.getId(),4L, product101);
         service.addProduct(order037.getId(),2L, product028);
-        Pedido order038 = service.createOrder2(sdf.parse("26/6/2010"), "Calle 56 Nº1936", -34.943496F, -57.939675F, user048);
+        
+        Pedido order038 = service.createOrder2(-34.943496F, -57.939675F, user048);
         service.addProduct(order038.getId(),1L, product050);
         service.addProduct(order038.getId(),2L, product050);
         service.addProduct(order038.getId(),4L, product030);
-        service.deliverOrder2(order038.getId(), user187, sdf.parse("28/6/2010"));
+        service.deliverOrder2(order038.getId(), user187);
+        
         service.finishOrder(order038.getId(), sdf.parse("28/6/2010"));
-        Pedido order039 = service.createOrder2(sdf.parse("28/6/2016"), "Calle 33 Nº236", -34.912635F, -57.95551F, user143);
+        Pedido order039 = service.createOrder2(-34.912635F, -57.95551F, user143);
         service.addProduct(order039.getId(),3L, product035);
         service.addProduct(order039.getId(),4L, product076);
         service.addProduct(order039.getId(),3L, product077);
         service.addProduct(order039.getId(),2L, product101);
-        service.deliverOrder2(order039.getId(), user199, sdf.parse("29/6/2016"));
-        Pedido order040 = service.createOrder2(sdf.parse("24/1/2012"), "Calle 41 Nº704", -34.931101F, -57.934478F, user045);
+        service.deliverOrder2(order039.getId(), user199);
+        
+        Pedido order040 = service.createOrder2( -34.931101F, -57.934478F, user045);
         service.addProduct(order040.getId(),4L, product033);
         service.cancelOrder(order040.getId(), sdf.parse("26/1/2012"));
-        Pedido order041 = service.createOrder2(sdf.parse("9/8/2012"), "Calle 58 Nº398", -34.944524F, -57.941176F, user121);
+        
+        Pedido order041 = service.createOrder2( -34.944524F, -57.941176F, user121);
         service.addProduct(order041.getId(),3L, product022);
         service.addProduct(order041.getId(),2L, product027);
         service.addProduct(order041.getId(),3L, product091);
         service.deliverOrder2(order041.getId(), user188);
         service.finishOrder(order041.getId(), sdf.parse("11/8/2012"));
+        
         Pedido order042 = service.createOrder2(-34.909536F, -57.919546F, user093);
         service.addProduct(order042.getId(),3L, product064);
         service.addProduct(order042.getId(),3L, product011);
         service.addProduct(order042.getId(),4L, product053);
         service.addProduct(order042.getId(),3L, product054);
         service.cancelOrder(order042.getId(), sdf.parse("18/10/2013"));
+        
         Pedido order043 = service.createOrder2(-34.912423F, -57.952291F, user065);
         service.addProduct(order043.getId(),4L, product106);
         service.addProduct(order043.getId(),1L, product048);
-        service.deliverOrder2(order043.getId(), user183, sdf.parse("8/9/2011"));
+        service.deliverOrder2(order043.getId(), user183);
         service.finishOrder(order043.getId(), sdf.parse("9/9/2011"));
+        
         Pedido order044 = service.createOrder2(-34.938523F, -57.966381F, user105);
         service.addProduct(order044.getId(),2L, product069);
-        service.deliverOrder2(order044.getId(), user193, sdf.parse("25/8/2014"));
+        service.deliverOrder2(order044.getId(), user193);
         service.finishOrder(order044.getId(), sdf.parse("25/8/2014"));
+        
         Pedido order045 = service.createOrder2(-34.907994F, -57.986734F, user088);
         service.addProduct(order045.getId(),1L, product047);
         service.addProduct(order045.getId(),2L, product023);
         service.addProduct(order045.getId(),2L, product082);
         service.addProduct(order045.getId(),2L, product035);
-        service.deliverOrder2(order045.getId(), user193, sdf.parse("23/1/2015"));
+        service.deliverOrder2(order045.getId(), user193);
+        
         service.finishOrder(order045.getId(), sdf.parse("23/1/2015"));
-        Pedido order046 = service.createOrder2(sdf.parse("2/10/2010"), "Calle 43 Nº1874", -34.906985F, -57.987415F, user135);
+        Pedido order046 = service.createOrder2( -34.906985F, -57.987415F, user135);
         service.addProduct(order046.getId(),1L, product035);
-        service.deliverOrder2(order046.getId(), user195, sdf.parse("4/10/2010"));
-        Pedido order047 = service.createOrder2(sdf.parse("20/6/2012"), "Calle 52 Nº1975", -34.939627F, -57.983254F, user134);
+        service.deliverOrder2(order046.getId(), user195);
+        
+        Pedido order047 = service.createOrder2( -34.939627F, -57.983254F, user134);
         service.addProduct(order047.getId(),2L, product059);
         service.addProduct(order047.getId(),4L, product104);
         service.addProduct(order047.getId(),3L, product008);
         service.addProduct(order047.getId(),1L, product073);
-        Pedido order048 = service.createOrder2(sdf.parse("20/9/2012"), "Calle 34 Nº1192", -34.909193F, -57.964098F, user011);
+        
+        Pedido order048 = service.createOrder2( -34.909193F, -57.964098F, user011);
         service.addProduct(order048.getId(),2L, product014);
-        service.deliverOrder2(order048.getId(), user183, sdf.parse("22/9/2012"));
-        Pedido order049 = service.createOrder2(sdf.parse("10/6/2014"), "Calle 65 Nº1265", -34.9358F, -57.981628F, user076);
+        service.deliverOrder2(order048.getId(), user183);
+        
+        Pedido order049 = service.createOrder2( -34.9358F, -57.981628F, user076);
         service.addProduct(order049.getId(),1L, product035);
-        Pedido order050 = service.createOrder2(sdf.parse("3/9/2013"), "Calle 42 Nº1713", -34.918557F, -57.992418F, user071);
+        
+        Pedido order050 = service.createOrder2( -34.918557F, -57.992418F, user071);
         service.addProduct(order050.getId(),4L, product029);
         service.cancelOrder(order050.getId(), sdf.parse("4/9/2013"));
-        Pedido order051 = service.createOrder2(sdf.parse("16/12/2010"), "Calle 53 Nº346", -34.914121F, -57.925569F, user026);
+        
+        Pedido order051 = service.createOrder2( -34.914121F, -57.925569F, user026);
         service.addProduct(order051.getId(),4L, product017);
-        Pedido order052 = service.createOrder2(sdf.parse("26/12/2014"), "Calle 70 Nº1029", -34.925668F, -57.96094F, user163);
+        
+        Pedido order052 = service.createOrder2(-34.935897F, -57.914448F, user126);
         service.addProduct(order052.getId(),1L, product096);
         service.addProduct(order052.getId(),3L, product051);
         service.addProduct(order052.getId(),4L, product031);
         service.addProduct(order052.getId(),1L, product055);
         service.cancelOrder(order052.getId(), sdf.parse("27/12/2014"));
-        Pedido order053 = service.createOrder2(sdf.parse("11/5/2016"), "Calle 69 Nº186", -34.923893F, -57.945088F, user147);
+        
+        Pedido order053 = service.createOrder2( -34.923893F, -57.945088F, user147);
         service.addProduct(order053.getId(),1L, product071);
         service.addProduct(order053.getId(),1L, product097);
         service.addProduct(order053.getId(),4L, product014);
         service.addProduct(order053.getId(),3L, product025);
-        service.deliverOrder2(order053.getId(), user189, sdf.parse("12/5/2016"));
-        Pedido order054 = service.createOrder2(sdf.parse("28/6/2015"), "Calle 41 Nº894", -34.940624F, -57.945166F, user093);
+        service.deliverOrder2(order053.getId(), user189);
+        
+        Pedido order054 = service.createOrder2( -34.940624F, -57.945166F, user093);
         service.addProduct(order054.getId(),1L, product025);
-        service.deliverOrder2(order054.getId(), user181, sdf.parse("29/6/2015"));
+        service.deliverOrder2(order054.getId(), user181);
         service.finishOrder(order054.getId(), sdf.parse("30/6/2015"));
-        Pedido order055 = service.createOrder2(sdf.parse("26/7/2013"), "Calle 37 Nº624", -34.934662F, -57.964473F, user101);
+        
+        Pedido order055 = service.createOrder2( -34.934662F, -57.964473F, user101);
         service.addProduct(order055.getId(),4L, product107);
         service.addProduct(order055.getId(),4L, product054);
         service.cancelOrder(order055.getId(), sdf.parse("28/7/2013"));
-        Pedido order056 = service.createOrder2(sdf.parse("25/9/2015"), "Calle 49 Nº1948", -34.939784F, -57.931771F, user092);
+        
+        Pedido order056 = service.createOrder2( -34.939784F, -57.931771F, user092);
         service.addProduct(order056.getId(),4L, product055);
         service.addProduct(order056.getId(),2L, product022);
         service.addProduct(order056.getId(),2L, product098);
         service.addProduct(order056.getId(),3L, product048);
-        service.deliverOrder2(order056.getId(), user184, sdf.parse("26/9/2015"));
-        Pedido order057 = service.createOrder2(sdf.parse("2/2/2010"), "Calle 66 Nº338", -34.918644F, -57.952791F, user109);
+        service.deliverOrder2(order056.getId(), user184);
+        
+        Pedido order057 = service.createOrder2(-34.918644F, -57.952791F, user109);
         service.addProduct(order057.getId(),3L, product056);
         service.addProduct(order057.getId(),1L, product095);
         service.addProduct(order057.getId(),2L, product001);
         service.cancelOrder(order057.getId(), sdf.parse("2/2/2010"));
-        Pedido order058 = service.createOrder2(sdf.parse("7/3/2016"), "Calle 72 Nº1194", -34.938966F, -57.918455F, user020);
+        
+        Pedido order058 = service.createOrder2(-34.938966F, -57.918455F, user020);
         service.addProduct(order058.getId(),4L, product069);
         service.addProduct(order058.getId(),1L, product090);
         service.addProduct(order058.getId(),1L, product101);
         service.addProduct(order058.getId(),1L, product005);
-        service.deliverOrder2(order058.getId(), user181, sdf.parse("9/3/2016"));
+        service.deliverOrder2(order058.getId(), user181);
         service.finishOrder(order058.getId(), sdf.parse("10/3/2016"));
-        Pedido order059 = service.createOrder2(sdf.parse("16/8/2010"), "Calle 33 Nº1396", -34.930939F, -57.92291F, user077);
+        
+        Pedido order059 = service.createOrder2( -34.930939F, -57.92291F, user077);
         service.addProduct(order059.getId(),2L, product068);
         service.cancelOrder(order059.getId(), sdf.parse("17/8/2010"));
-        Pedido order060 = service.createOrder2(sdf.parse("5/5/2012"), "Calle 62 Nº361", -34.935255F, -57.945249F, user014);
+        
+        Pedido order060 = service.createOrder2( -34.935255F, -57.945249F, user014);
         service.addProduct(order060.getId(),2L, product061);
         service.addProduct(order060.getId(),1L, product015);
         service.addProduct(order060.getId(),4L, product086);
         service.addProduct(order060.getId(),1L, product018);
-        service.deliverOrder2(order060.getId(), user200, sdf.parse("6/5/2012"));
+        service.deliverOrder2(order060.getId(), user200);
         service.finishOrder(order060.getId(), sdf.parse("7/5/2012"));
-        Pedido order061 = service.createOrder2(sdf.parse("11/6/2012"), "Calle 64 Nº1384", -34.921551F, -57.963718F, user135);
+        
+        Pedido order061 = service.createOrder2( -34.921551F, -57.963718F, user135);
         service.addProduct(order061.getId(),4L, product098);
         service.addProduct(order061.getId(),3L, product086);
         service.addProduct(order061.getId(),2L, product085);
-        service.deliverOrder2(order061.getId(), user194, sdf.parse("12/6/2012"));
-        Pedido order062 = service.createOrder2(sdf.parse("15/9/2011"), "Calle 70 Nº1191", -34.912951F, -57.942199F, user043);
+        service.deliverOrder2(order061.getId(), user194);
+        
+        Pedido order062 = service.createOrder2( -34.912951F, -57.942199F, user043);
         service.addProduct(order062.getId(),3L, product040);
         service.addProduct(order062.getId(),1L, product009);
         service.addProduct(order062.getId(),1L, product098);
         service.addProduct(order062.getId(),3L, product091);
-        Pedido order063 = service.createOrder2(sdf.parse("16/1/2011"), "Calle 62 Nº1049", -34.940602F, -57.915548F, user062);
+        
+        Pedido order063 = service.createOrder2(-34.940602F, -57.915548F, user062);
         service.addProduct(order063.getId(),3L, product044);
         service.addProduct(order063.getId(),1L, product072);
         service.cancelOrder(order063.getId(), sdf.parse("17/1/2011"));
-        Pedido order064 = service.createOrder2(sdf.parse("16/7/2013"), "Calle 72 Nº545", -34.918032F, -57.939277F, user099);
+        
+        Pedido order064 = service.createOrder2( -34.918032F, -57.939277F, user099);
         service.addProduct(order064.getId(),3L, product001);
         service.cancelOrder(order064.getId(), sdf.parse("16/7/2013"));
-        Pedido order065 = service.createOrder2(sdf.parse("13/11/2010"), "Calle 36 Nº1634", -34.934304F, -57.955076F, user120);
+        
+        Pedido order065 = service.createOrder2( -34.934304F, -57.955076F, user120);
         service.addProduct(order065.getId(),4L, product104);
         service.addProduct(order065.getId(),2L, product058);
         service.addProduct(order065.getId(),3L, product015);
         service.addProduct(order065.getId(),1L, product049);
-        service.deliverOrder2(order065.getId(), user183, sdf.parse("15/11/2010"));
-        Pedido order066 = service.createOrder2(sdf.parse("4/11/2015"), "Calle 55 Nº373", -34.943479F, -57.962378F, user094);
+        service.deliverOrder2(order065.getId(), user183);
+        
+        Pedido order066 = service.createOrder2(-34.943479F, -57.962378F, user094);
         service.addProduct(order066.getId(),4L, product085);
         service.cancelOrder(order066.getId(), sdf.parse("4/11/2015"));
+        
         Pedido order067 = service.createOrder2(sdf.parse("22/4/2011"), "Calle 48 Nº1309", -34.918481F, -57.92744F, user040);
         service.addProduct(order067.getId(),4L, product052);
         service.deliverOrder2(order067.getId(), user188, sdf.parse("23/4/2011"));
@@ -1089,61 +1120,61 @@ public class DBInitializer {
         service.addProduct(order116.getId(),4L, product049);
         service.addProduct(order116.getId(),2L, product099);
         service.addProduct(order116.getId(),4L, product089);
-        service.deliverOrder2(order116.getId(), user192, sdf.parse("22/12/2011"));
-        Pedido order117 = service.createOrder2(sdf.parse("17/12/2011"), "Calle 44 Nº1596", -34.909948F, -57.967142F, user013);
+        service.deliverOrder2(order116.getId(), user192);
+        Pedido order117 = service.createOrder2( -34.909948F, -57.967142F, user013);
         service.addProduct(order117.getId(),4L, product077);
-        service.deliverOrder2(order117.getId(), user192, sdf.parse("17/12/2011"));
+        service.deliverOrder2(order117.getId(), user192);
         service.finishOrder(order117.getId(), sdf.parse("19/12/2011"));
-        Pedido order118 = service.createOrder2(sdf.parse("5/12/2011"), "Calle 59 Nº1159", -34.930135F, -57.96416F, user006);
+        Pedido order118 = service.createOrder2( -34.930135F, -57.96416F, user006);
         service.addProduct(order118.getId(),1L, product042);
         service.cancelOrder(order118.getId(), sdf.parse("5/12/2011"));
-        Pedido order119 = service.createOrder2(sdf.parse("3/7/2013"), "Calle 43 Nº84", -34.911992F, -57.940069F, user124);
+        Pedido order119 = service.createOrder2( -34.911992F, -57.940069F, user124);
         service.addProduct(order119.getId(),4L, product069);
         service.addProduct(order119.getId(),1L, product074);
         service.addProduct(order119.getId(),2L, product105);
         service.addProduct(order119.getId(),2L, product038);
-        service.deliverOrder2(order119.getId(), user187, sdf.parse("3/7/2013"));
+        service.deliverOrder2(order119.getId(), user187);
         service.finishOrder(order119.getId(), sdf.parse("3/7/2013"));
-        Pedido order120 = service.createOrder2(sdf.parse("5/2/2011"), "Calle 42 Nº380", -34.906103F, -57.959187F, user028);
+        Pedido order120 = service.createOrder2( -34.906103F, -57.959187F, user028);
         service.addProduct(order120.getId(),4L, product056);
         service.addProduct(order120.getId(),3L, product005);
-        service.deliverOrder2(order120.getId(), user192, sdf.parse("6/2/2011"));
+        service.deliverOrder2(order120.getId(), user192);
         service.finishOrder(order120.getId(), sdf.parse("7/2/2011"));
-        Pedido order121 = service.createOrder2(sdf.parse("6/7/2014"), "Calle 49 Nº1807", -34.939027F, -57.9465F, user154);
+        Pedido order121 = service.createOrder2(-34.939027F, -57.9465F, user154);
         service.addProduct(order121.getId(),1L, product064);
         service.addProduct(order121.getId(),4L, product019);
-        service.deliverOrder2(order121.getId(), user183, sdf.parse("7/7/2014"));
+        service.deliverOrder2(order121.getId(), user183 );
         service.finishOrder(order121.getId(), sdf.parse("8/7/2014"));
-        Pedido order122 = service.createOrder2(sdf.parse("6/6/2012"), "Calle 64 Nº642", -34.938753F, -57.979457000000004F, user066);
+        Pedido order122 = service.createOrder2(-34.938753F, -57.979457000000004F, user066);
         service.addProduct(order122.getId(),1L, product023);
-        service.deliverOrder2(order122.getId(), user189, sdf.parse("6/6/2012"));
+        service.deliverOrder2(order122.getId(), user189);
         service.finishOrder(order122.getId(), sdf.parse("7/6/2012"));
-        Pedido order123 = service.createOrder2(sdf.parse("10/9/2012"), "Calle 62 Nº1576", -34.911271F, -57.974313F, user055);
+        Pedido order123 = service.createOrder2( -34.911271F, -57.974313F, user055);
         service.addProduct(order123.getId(),1L, product092);
-        service.deliverOrder2(order123.getId(), user195, sdf.parse("12/9/2012"));
+        service.deliverOrder2(order123.getId(), user195);
         service.finishOrder(order123.getId(), sdf.parse("13/9/2012"));
-        Pedido order124 = service.createOrder2(sdf.parse("10/8/2014"), "Calle 36 Nº1806", -34.908239F, -57.97168F, user049);
+        Pedido order124 = service.createOrder2( -34.908239F, -57.97168F, user049);
         service.addProduct(order124.getId(),1L, product004);
         service.addProduct(order124.getId(),1L, product035);
-        Pedido order125 = service.createOrder2(sdf.parse("6/11/2016"), "Calle 57 Nº166", -34.934041F, -57.989607F, user067);
+        Pedido order125 = service.createOrder2( -34.934041F, -57.989607F, user067);
         service.addProduct(order125.getId(),2L, product081);
         service.addProduct(order125.getId(),4L, product070);
         service.cancelOrder(order125.getId(), sdf.parse("7/11/2016"));
-        Pedido order126 = service.createOrder2(sdf.parse("10/11/2015"), "Calle 48 Nº560", -34.917367F, -57.985418F, user037);
+        Pedido order126 = service.createOrder2( -34.917367F, -57.985418F, user037);
         service.addProduct(order126.getId(),2L, product014);
-        service.deliverOrder2(order126.getId(), user183, sdf.parse("12/11/2015"));
+        service.deliverOrder2(order126.getId(), user183);
         service.finishOrder(order126.getId(), sdf.parse("13/11/2015"));
-        Pedido order127 = service.createOrder2(sdf.parse("27/11/2015"), "Calle 64 Nº1878", -34.946474F, -57.949001F, user139);
+        Pedido order127 = service.createOrder2( -34.946474F, -57.949001F, user139);
         service.addProduct(order127.getId(),4L, product073);
         service.addProduct(order127.getId(),2L, product077);
-        Pedido order128 = service.createOrder2(sdf.parse("2/9/2010"), "Calle 33 Nº1796", -34.915847F, -57.94501F, user014);
+        Pedido order128 = service.createOrder2(-34.915847F, -57.94501F, user014);
         service.addProduct(order128.getId(),4L, product051);
-        service.deliverOrder2(order128.getId(), user192, sdf.parse("4/9/2010"));
-        service.finishOrder(order128.getId(), sdf.parse("4/9/2010"));
-        Pedido order129 = service.createOrder2(sdf.parse("23/1/2015"), "Calle 35 Nº282", -34.913336F, -57.955732F, user046);
+        service.deliverOrder2(order128.getId(), user192);
+        service.finishOrder(order128.getId());
+        Pedido order129 = service.createOrder2(-34.913336F, -57.955732F, user046);
         service.addProduct(order129.getId(),4L, product018);
         service.cancelOrder(order129.getId(), sdf.parse("23/1/2015"));
-        Pedido order130 = service.createOrder2(sdf.parse("7/3/2011"), "Calle 49 Nº682", -34.928953F, -57.944505F, user175);
+        Pedido order130 = service.createOrder2(-34.928953F, -57.944505F, user175);
         service.addProduct(order130.getId(),1L, product084);
         service.addProduct(order130.getId(),4L, product058);
         service.addProduct(order130.getId(),3L, product021);
@@ -1209,17 +1240,17 @@ public class DBInitializer {
         service.addProduct(order143.getId(),3L, product032);
         service.addProduct(order143.getId(),1L, product034);
         service.cancelOrder(order143.getId(), sdf.parse("5/7/2010"));
-        Pedido order144 = service.createOrder2(sdf.parse("1/6/2010"), "Calle 36 Nº359", -34.921144F, -57.984238F, user085);
+        Pedido order144 = service.createOrder2( -34.921144F, -57.984238F, user085);
         service.addProduct(order144.getId(),1L, product008);
         service.addProduct(order144.getId(),4L, product008);
         service.addProduct(order144.getId(),3L, product020);
-        service.deliverOrder2(order144.getId(), user183, sdf.parse("2/6/2010"));
+        service.deliverOrder2(order144.getId(), user183);
         service.finishOrder(order144.getId(), sdf.parse("4/6/2010"));
-        Pedido order145 = service.createOrder2(sdf.parse("4/3/2016"), "Calle 37 Nº1925", -34.920593F, -57.990078F, user125);
+        Pedido order145 = service.createOrder2( -34.920593F, -57.990078F, user125);
         service.addProduct(order145.getId(),2L, product001);
         service.addProduct(order145.getId(),4L, product035);
         service.addProduct(order145.getId(),2L, product082);
-        service.deliverOrder2(order145.getId(), user181, sdf.parse("6/3/2016"));
+        service.deliverOrder2(order145.getId(), user181);
         service.finishOrder(order145.getId(), sdf.parse("7/3/2016"));
         Pedido order146 = service.createOrder2(sdf.parse("3/10/2011"), "Calle 42 Nº1150", -34.91825F, -57.964374F, user026);
         service.addProduct(order146.getId(),3L, product032);
@@ -1237,10 +1268,6 @@ public class DBInitializer {
         service.addProduct(order149.getId(),1L, product086);
         service.addProduct(order149.getId(),3L, product027);
         service.addProduct(order149.getId(),2L, product069);
-        Pedido order150 = service.createOrder2(sdf.parse("4/1/2011"), "Calle 44 Nº1295", -34.935897F, -57.914448F, user126);
-        service.addProduct(order150.getId(),2L, product060);
-        service.deliverOrder2(order150.getId(), user182, sdf.parse("4/1/2011"));
-        service.finishOrder(order150.getId(), sdf.parse("5/1/2011"));
         
 
 
