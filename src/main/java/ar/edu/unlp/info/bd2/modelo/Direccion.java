@@ -16,10 +16,10 @@ public class Direccion {
 	private Long id;
 	
 	@Column(name = "COORDENADA_X")
-	private double coordX;
+	private float coordX;
 	
 	@Column(name = "COORDENADA_Y")
-	private double coordY;
+	private float coordY;
 	
 	@Column(name = "CALLE")
 	private String calle;
@@ -27,7 +27,7 @@ public class Direccion {
 	@Column(name = "ALTURA")
 	private int altura;
 
-	public Direccion(double x, double y, String nombCalle, int nroCasa) {
+	public Direccion(float x, float y, String nombCalle, int nroCasa) {
 		coordX = x;
 		coordY = y;
 		calle = nombCalle;
@@ -50,7 +50,7 @@ public class Direccion {
 		return coordX;
 	}
 
-	public void setCoordX(double coordX) {
+	public void setCoordX(float coordX) {
 		this.coordX = coordX;
 	}
 
@@ -58,7 +58,7 @@ public class Direccion {
 		return coordY;
 	}
 
-	public void setCoordY(double coordY) {
+	public void setCoordY(float coordY) {
 		this.coordY = coordY;
 	}
 

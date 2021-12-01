@@ -1,6 +1,5 @@
 package ar.edu.unlp.info.bd2.modelo;
 
-import java.time.LocalDate;
 import java.util.*;
 
 import javax.persistence.Column;
@@ -33,11 +32,11 @@ public class Repartidor {
 	private String email;
 	
 	@Column(name = "FECHA_NACIMIENTO")
-	private LocalDate fechaNac;
+	private Date fechaNac;
 
 	private List<Pedido> pedidos;
 
-	public Repartidor(String nomb, String correo, LocalDate fecNac, String user, String pass) {
+	public Repartidor(String nomb, String correo, Date fecNac, String user, String pass) {
 		this.pedidos = new ArrayList<Pedido>();
 		nombre = nomb;
 		email = correo;
@@ -108,11 +107,11 @@ public class Repartidor {
 		this.email = email;
 	}
 
-	public LocalDate getFechaNac() {
+	public Date getFechaNac() {
 		return fechaNac;
 	}
 
-	public void setFechaNac(LocalDate fechaNac) {
+	public void setFechaNac(Date fechaNac) {
 		this.fechaNac = fechaNac;
 	}
 

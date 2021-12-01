@@ -24,19 +24,13 @@ public interface ProductoRepository extends CrudRepository<Producto, Long>{
 	public List<String> getTop10MoreExpensiveProducts();
 	
 	
-	// Obtiene los productos que nos cambiaron su precio
-	@Query(value="select P.NOMBRE from producto AS P\n"
-			+ "INNER JOIN precio_historico AS PH \n"
-			+ "ON P.ID = PH.ID\n"
-			+ "where P.PRECIO = PH.PRECIO", nativeQuery=true)
+	// Obtiene los productos que no cambiaron su precio
+	@Query(value="select P.NOMBRE from producto AS P INNER JOIN precio_historico AS PH ON P.ID = PH.ID where P.PRECIO = PH.PRECIO", nativeQuery=true)
 	public List<String> getProductsOnePrice();
 	
 	
 	//Obtiene el listado de productos con su precio a una fecha dada
-	@Query(value="select P.NOMBRE from producto AS P\n"
-			+ "INNER JOIN precio_historico AS PH \n"
-			+ "ON P.ID = PH.ID\n"
-			+ "where PH.FIN_PH = day", nativeQuery=true)
+	@Query(value="select P.NOMBRE from producto AS P INNER JOIN precio_historico AS PH ON P.ID = PH.ID where PH.FIN_PH = day", nativeQuery=true)
 	public List<String> getProductsWithPriceAt(Date day);
 
 

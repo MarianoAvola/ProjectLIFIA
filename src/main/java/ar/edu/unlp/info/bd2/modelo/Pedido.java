@@ -45,10 +45,12 @@ public class Pedido {
 	@OneToMany(mappedBy = "PEDIDOS", cascade = CascadeType.PERSIST, orphanRemoval = true, fetch = FetchType.EAGER)
 	private List<DetallePedido> detalles;
 
+	
 	public Pedido(List<DetallePedido> detas) {
 		detalles = new ArrayList<DetallePedido>();
 
 		setEstado(new Pendiente());
+		setEstado2(EstadoPedido2.PENDIENTE);
 
 		detalles = detas;
 
@@ -132,6 +134,14 @@ public class Pedido {
 
 	public void setRepartidor(Repartidor repartidor) {
 		this.repartidor = repartidor;
+	}
+
+	public EstadoPedido2 getEstado2() {
+		return estado2;
+	}
+
+	public void setEstado2(EstadoPedido2 estado2) {
+		this.estado2 = estado2;
 	}
 
 }

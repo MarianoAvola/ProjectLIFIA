@@ -2,8 +2,8 @@ package ar.edu.unlp.info.bd2.services;
 import static org.junit.jupiter.api.Assertions.*;
 
 import ar.edu.unlp.info.bd2.config.SpringDataConfiguration;
-import ar.edu.unlp.info.bd2.model.*;
 import ar.edu.unlp.info.bd2.modelo.Cliente;
+import ar.edu.unlp.info.bd2.modelo.Direccion;
 import ar.edu.unlp.info.bd2.modelo.Pedido;
 import ar.edu.unlp.info.bd2.modelo.Producto;
 import ar.edu.unlp.info.bd2.modelo.Proveedor;
@@ -86,7 +86,7 @@ public class DBliveryServiceTestCase {
 
     @Test
     public void testCreateProduct() {
-        Proveedor s1 = this.service.createSupplier("Burger King", "30710256443", "Av. Corrientes 956", Float.valueOf(-53.45F), Float.valueOf(-60.22F));
+        Proveedor s1 = this.service.createSupplier("Burger King", 30710256443l, new Direccion(Float.valueOf(-53.45F), Float.valueOf(-60.22F), "Av. Corrientes", 956));
         assertNotNull(s1.getCuit());
         assertEquals("Burger King",s1.getNombre());
         Producto p1 = this.service.createProduct("Combo Stacker ATR", Float.valueOf(2521.2F), Float.valueOf(2.5F),s1);
@@ -99,20 +99,20 @@ public class DBliveryServiceTestCase {
     public void testUpdateProductPrice() throws DBliveryException{
         Calendar cal = Calendar.getInstance();
         Date startDate = cal.getTime();
-        Proveedor s1 = this.service.createSupplier("Burger King", "30710256443", "Av. Corrientes 956", Float.valueOf(-53.45F), Float.valueOf(-60.22F));
+        Proveedor s1 = this.service.createSupplier("Burger King", 30710256443l, new Direccion(Float.valueOf(-53.45F), Float.valueOf(-60.22F), "Av. Corrientes", 956));
         Producto p1 = this.service.createProduct("Combo Stacker ATR", Float.valueOf(2521.2F), Float.valueOf(2.5F),s1);
         assertNotNull(p1.getId());
         assertEquals(1,p1.getPrecio());
+       
         Producto p2 = this.service.updateProductPrice(p1.getId(),Float.valueOf(3000.0F),startDate);
-        assertEquals(Float.valueOf(3000.0F),p2.getPrecio());
+        assertEquals(3000,p2.getPrecio());
         assertEquals(2,p2.getPrecio());
     }
 
     @Test
     public void testCreateOrder() throws DBliveryException {
         Calendar cal = Calendar.getInstance();
-        Date orderDate = cal.getTime();
-        Proveedor s1 = this.service.createSupplier("Burger King", "30710256443", "Av. Corrientes 956", Float.valueOf(-53.45F), Float.valueOf(-60.22F));
+        Proveedor s1 = this.service.createSupplier("Burger King", 30710256443l, new Direccion(Float.valueOf(-53.45F), Float.valueOf(-60.22F), "Av. Corrientes", 956));
         Producto p1 = this.service.createProduct("Combo Stacker ATR", Float.valueOf(2521.2F), Float.valueOf(2.5F),s1);
         Calendar cal2 = Calendar.getInstance();
         cal2.set(Calendar.YEAR, 1982);
@@ -120,7 +120,7 @@ public class DBliveryServiceTestCase {
         cal2.set(Calendar.DAY_OF_MONTH, 17);
         Date dob = cal.getTime();
         Cliente u1 = this.service.createUser("hugo.gamarra@testmail.com", "123456", "hgamarra", "Hugo Gamarra", dob);
-        Pedido o1 = this.service.createOrder2(orderDate,"Av. Corrientes 1405 2° B", Float.valueOf(-54.45F), Float.valueOf(-62.22F),u1);
+        Pedido o1 = this.service.createOrder2(Float.valueOf(-54.45F), Float.valueOf(-62.22F),u1);
         Pedido o2 = this.service.addProduct(o1.getId(), 1L, p1);
         assertNotNull(o1.getId());
         assertNotNull(o2.getId());
@@ -133,7 +133,7 @@ public class DBliveryServiceTestCase {
     public void testDeliverOrder() throws DBliveryException {
         Calendar cal = Calendar.getInstance();
         Date orderDate = cal.getTime();
-        Proveedor s1 = this.service.createSupplier("Burger King", "30710256443", "Av. Corrientes 956", Float.valueOf(-53.45F), Float.valueOf(-60.22F));
+        Proveedor s1 = this.service.createSupplier("Burger King", 30710256443l, new Direccion(Float.valueOf(-53.45F), Float.valueOf(-60.22F), "Av. Corrientes", 956));
         Producto p1 = this.service.createProduct("Combo Stacker ATR", Float.valueOf(2521.2F), Float.valueOf(2.5F),s1);
         Calendar cal2 = Calendar.getInstance();
         cal2.set(Calendar.YEAR, 1982);
@@ -167,7 +167,7 @@ public class DBliveryServiceTestCase {
         cal2.set(Calendar.DAY_OF_MONTH, 17);
         Date dob = cal.getTime();
         Cliente u1 = this.service.createUser("hugo.gamarra@testmail.com", "123456", "hgamarra", "Hugo Gamarra", dob);
-        Proveedor s1 = this.service.createSupplier("Burger King", "30710256443", "Av. Corrientes 956", Float.valueOf(-53.45F), Float.valueOf(-60.22F));
+        Proveedor s1 = this.service.createSupplier("Burger King", 30710256443l, new Direccion(Float.valueOf(-53.45F), Float.valueOf(-60.22F), "Av. Corrientes", 956));
         Pedido o1 = this.service.createOrder(orderDate,"Av. Corrientes 1405 2° B", Float.valueOf(-54.45F), Float.valueOf(-62.22F),u1);
         assertTrue(this.service.canCancel(o1.getId()));
         cal2.set(Calendar.YEAR, 1988);
@@ -182,7 +182,8 @@ public class DBliveryServiceTestCase {
         assertThrows(DBliveryException.class, () -> this.service.cancelOrder(o3.getId()),"The order can't be cancelled");
         Pedido o4 = this.service.createOrder(orderDate,"Av. Corrientes 1405 2° B", Float.valueOf(-54.45F), Float.valueOf(-62.22F),u1);
         Pedido o5 = this.service.cancelOrder(o4.getId());
-        assertEquals(this.service.getActualStatus(o5.getId()).getEstado(),"Cancelled");
+        //Revisar y verificar
+        assertEquals(this.service.getActualStatus(o5.getId()).getPedido().getEstado2(),"Cancelado");
         assertEquals(2,o5.getEstado());
     }
 
@@ -190,7 +191,7 @@ public class DBliveryServiceTestCase {
     public void testFinishOrder() throws DBliveryException {
         Calendar cal = Calendar.getInstance();
         Date orderDate = cal.getTime();
-        Proveedor s1 = this.service.createSupplier("Burger King", "30710256443", "Av. Corrientes 956", Float.valueOf(-53.45F), Float.valueOf(-60.22F));
+        Proveedor s1 = this.service.createSupplier("Burger King", 30710256443l, new Direccion(Float.valueOf(-53.45F), Float.valueOf(-60.22F), "Av. Corrientes", 956));
         Producto p1 = this.service.createProduct("Combo Stacker ATR", Float.valueOf(2521.2F), Float.valueOf(2.5F),s1);
         Calendar cal2 = Calendar.getInstance();
         cal2.set(Calendar.YEAR, 1982);
@@ -211,12 +212,13 @@ public class DBliveryServiceTestCase {
         Pedido o4 = this.service.finishOrder(o3.getId());
         assertNotNull(o4.getId());
         assertEquals(3,o3.getEstado());
-        assertEquals(this.service.getActualStatus(o4.getId()).getEstado(),"Delivered");
+        //Revisar y verificar
+        assertEquals(this.service.getActualStatus(o4.getId()).getPedido().getEstado2(),"Entregado");
     }
 
     @Test
     public void testGetProduct() {
-        Proveedor s1 = this.service.createSupplier("Burger King", "30710256443", "Av. Corrientes 956", Float.valueOf(-53.45F), Float.valueOf(-60.22F));
+    	Proveedor s1 = this.service.createSupplier("Burger King", 30710256443l, new Direccion(Float.valueOf(-53.45F), Float.valueOf(-60.22F), "Av. Corrientes", 956));
         assertNotNull(s1.getCuit());
         assertEquals("Burger King",s1.getNombre());
         Producto p1 = this.service.createProduct("Combo Stacker ATR", Float.valueOf(2521.2F), Float.valueOf(2.5F),s1);

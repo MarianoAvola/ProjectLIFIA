@@ -4,7 +4,6 @@ import ar.edu.unlp.info.bd2.modelo.*;
 import ar.edu.unlp.info.bd2.modelo.estados.EstadoPedido;
 import ar.edu.unlp.info.bd2.repositories.DBliveryException;
 
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -34,7 +33,7 @@ public interface DBliveryService {
 	 * @param coordY  coordeada Y de la dirección del produtor
 	 * @return el productor creado
 	 */
-	Proveedor createSupplier(String name, String cuil, String address, Float coordX, Float coordY);
+	Proveedor createSupplier(String name, Long cuil, Direccion address);
 
 	/**
 	 * Crea y retorna un Cliente

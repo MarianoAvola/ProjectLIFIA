@@ -2,7 +2,7 @@ package ar.edu.unlp.info.bd2.config;
 
 
 import ar.edu.unlp.info.bd2.services.DBliveryService;
-import ar.edu.unlp.info.bd2.services.SpringDataDBliveryService;
+import ar.edu.unlp.info.bd2.services.DBliveryServiceImpl;
 import ar.edu.unlp.info.bd2.utils.DBInitializer;
 
 import java.util.Properties;
@@ -27,7 +27,7 @@ public class SpringDataConfiguration {
 
     @Bean
     public DBliveryService springDataJpaService() {
-        return  (DBliveryService) new SpringDataDBliveryService();
+        return  (DBliveryService) new DBliveryServiceImpl();
     }
 
     @Bean
