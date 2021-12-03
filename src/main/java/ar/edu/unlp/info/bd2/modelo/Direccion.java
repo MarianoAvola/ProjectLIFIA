@@ -1,12 +1,16 @@
 package ar.edu.unlp.info.bd2.modelo;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Table(name = "DIRECCIONES")
-public class Direccion {
+public class Direccion implements Serializable {
 	
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	private Long id;
 	

@@ -1,5 +1,6 @@
 package ar.edu.unlp.info.bd2.modelo;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -9,7 +10,9 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "PROVEEDORES")
-public class Proveedor {
+public class Proveedor implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	@Column(name = "CUIT")
 	private Long cuit;

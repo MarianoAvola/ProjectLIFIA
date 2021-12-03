@@ -2,7 +2,7 @@ package ar.edu.unlp.info.bd2.services;
 import static org.junit.jupiter.api.Assertions.*;
 
 import ar.edu.unlp.info.bd2.config.SpringDataConfiguration;
-import ar.edu.unlp.info.bd2.model.*;
+import ar.edu.unlp.info.bd2.modelo.*;
 import ar.edu.unlp.info.bd2.repositories.DBliveryException;
 
 import java.util.*;

@@ -1,5 +1,6 @@
 package ar.edu.unlp.info.bd2.modelo;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.*;
 
@@ -12,7 +13,9 @@ import ar.edu.unlp.info.bd2.modelo.estados.*;
 
 @Entity
 @Table(name = "CLIENTES")
-public class Cliente {
+public class Cliente implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	private Long id;

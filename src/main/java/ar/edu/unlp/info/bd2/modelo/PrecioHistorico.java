@@ -1,5 +1,6 @@
 package ar.edu.unlp.info.bd2.modelo;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 import javax.persistence.Column;
@@ -7,7 +8,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Table(name = "PRECIO_HISTORICO")
-public class PrecioHistorico {
+public class PrecioHistorico implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	private Long id;

@@ -1,5 +1,6 @@
 package ar.edu.unlp.info.bd2.modelo;
 
+import java.io.Serializable;
 import java.util.*;
 
 import javax.persistence.Column;
@@ -11,7 +12,9 @@ import ar.edu.unlp.info.bd2.modelo.estados.*;
 
 @Entity
 @Table(name = "PEDIDOS")
-public class Pedido {
+public class Pedido implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	private Long id;
