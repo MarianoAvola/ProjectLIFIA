@@ -8,31 +8,13 @@ import ar.edu.unlp.info.bd2.modelo.Pedido;
 
 public class Pendiente extends EstadoPedido {
 
-	private Pedido pedido;
-	
-	public Pendiente (){
-		//this.pedido.setEstado(null);
-		super();
+	public Pendiente() {
+
 	}
 
-	public Pedido getPedido() {
-		return pedido;
-	}
+	public Pendiente(Pedido ped) {
+		super(ped, "Pendiente");
 
-	public void setPedido(Pedido pedido) {
-		this.pedido = pedido;
-	}	
-	
-//	public void setPedido(Pedido ped) {
-//		this.pedido = ped;
-//		
-//		Timer timer = new Timer();
-//		timer.schedule(new TimerTask() {
-//			@Override
-//			public void run() {
-//				Pendiente.this.pedido.setEstado(new Preparado());
-//			}
-//		}, 5000);
-//	}
+	}
 	
 }
